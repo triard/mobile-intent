@@ -30,9 +30,24 @@ public class BundleActivity extends AppCompatActivity {
         ageInput = findViewById(R.id.input_age);
         btnSubmit = findViewById(R.id.btn_submit);
 
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+//        btnSubmit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String username = usernameInput.getText().toString();
+//                String name = nameInput.getText().toString();
+//                int age = Integer.parseInt(ageInput.getText().toString());
+//
+//                Intent intent = new Intent(BundleActivity.this, ProfileBundleActivity.class);
+//                intent.putExtra(USERNAME_KEY, username);
+//                intent.putExtra(NAME_KEY, name);
+//                intent.putExtra(AGE_KEY, age);
+//                startActivity(intent);
+//            }
+//        });
+
+    }
+
+    public void handleSubmit(View view) {
                 String username = usernameInput.getText().toString();
                 String name = nameInput.getText().toString();
                 int age = Integer.parseInt(ageInput.getText().toString());
@@ -42,8 +57,5 @@ public class BundleActivity extends AppCompatActivity {
                 intent.putExtra(NAME_KEY, name);
                 intent.putExtra(AGE_KEY, age);
                 startActivity(intent);
-            }
-        });
-
     }
 }

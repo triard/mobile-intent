@@ -12,7 +12,7 @@ public class ProfileParcelableActivity extends AppCompatActivity {
 
     public static final String USER_KEY = "user";
 
-    private TextView usernameInput, nameInput, ageInput;
+    private TextView usernameOutput, nameOutput, ageOutput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,19 +20,19 @@ public class ProfileParcelableActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile_parcelable);
 
         // TODO: bind here
-        usernameInput = findViewById(R.id.text_username);
-        nameInput = findViewById(R.id.text_name);
-        ageInput = findViewById(R.id.text_age);
+        usernameOutput = findViewById(R.id.text_username);
+        nameOutput = findViewById(R.id.text_name);
+        ageOutput = findViewById(R.id.text_age);
 
 
         Bundle extras = getIntent().getExtras();
-        User user = extras.getParcelable(USER_KEY);
+        User user = extras.getParcelable("user");
         if (extras != null) {
 
             // TODO: display value here
-            usernameInput.setText(user.getUsername());
-            nameInput.setText(user.getName());
-            ageInput.setText(user.getAge());
+            usernameOutput.setText(user.getUsername());
+            nameOutput.setText(user.getName());
+            ageOutput.setText(String.valueOf(user.getAge()));
         }
     }
 }

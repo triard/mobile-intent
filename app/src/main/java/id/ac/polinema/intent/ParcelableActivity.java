@@ -21,26 +21,35 @@ public class ParcelableActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parcelable);
 
-        usernameInput = findViewById(R.id.text_username);
-        nameInput = findViewById(R.id.text_name);
-        ageInput = findViewById(R.id.text_age);
+        usernameInput = findViewById(R.id.input_username);
+        nameInput = findViewById(R.id.input_name);
+        ageInput = findViewById(R.id.input_age);
         btnSubmit = (Button) findViewById(R.id.btn_submit);
 
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String username = usernameInput.getText().toString();
-                String name = nameInput.getText().toString();
-                int age = Integer.parseInt(ageInput.getText().toString());
-
-                User user = new User(username, name, age);
-                Intent intent = new Intent(ParcelableActivity.this, ProfileParcelableActivity.class);
-                intent.putExtra(USER_KEY, user);
-                startActivity(intent);
-            }
-        });
-
+//        btnSubmit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String username = usernameInput.getText().toString();
+//                String name = nameInput.getText().toString();
+//                int age = Integer.parseInt(ageInput.getText().toString());
+//
+//                User user = new User(username, name, age);
+//                Intent intent = new Intent(ParcelableActivity.this, ProfileParcelableActivity.class);
+//                intent.putExtra(USER_KEY, user);
+//                startActivity(intent);
+//            }
+//        });
 
     }
 
+    public void handleSubmit2(View view) {
+        String username = usernameInput.getText().toString();
+        String name = nameInput.getText().toString();
+        int age = Integer.parseInt(ageInput.getText().toString());
+
+        User user = new User(username, name, age);
+        Intent intent = new Intent(this, ProfileParcelableActivity.class);
+        intent.putExtra("user", user);
+        startActivity(intent);
+    }
 }

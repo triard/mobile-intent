@@ -51,6 +51,8 @@ public class User implements Parcelable {
         dest.writeInt(this.age);
     }
 
+    public User(){}
+
     protected User(Parcel in) {
         this.username = in.readString();
         this.name = in.readString();

@@ -31,4 +31,9 @@ public class MainActivity extends AppCompatActivity {
     public void handleExit(View view) {
         finish();
     }
+
+    public void handleSubmit(View view) {
+        Intent intent = new Intent(this, ParcelableActivity.class);
+        startActivity(intent);
+    }
 }
